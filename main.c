@@ -55,7 +55,6 @@ Arvore* carregar_candidatos() {
   return a;
 }
 void buscar_por_numero(Arvore *candidatos){
-	
 	printf("\nNumero do candidato: ");
     int numero;
     scanf("%d", &numero);
@@ -67,7 +66,7 @@ void buscar_por_numero(Arvore *candidatos){
     }
 }
 
-void imprimir_todos(Arvore *candidatos) {
+void imprimir_todos(Arvore *candidatos){
   	arvore_imprime_em_ordem(candidatos);
 }
 
