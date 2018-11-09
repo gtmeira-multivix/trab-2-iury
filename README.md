@@ -1,4 +1,4 @@
-# Estruturas de Dados - Trabalho 2
+﻿# Estruturas de Dados - Trabalho 2
 
 Neste trabalho, você irá construir um pequeno programa de acesso aos dados das eleições. O programa deve ter ao menos duas opções:
 
@@ -15,6 +15,6 @@ O trabalho deve ser entregue até as  **23:59 do dia 26/10 (sexta-feira)**. A en
 ## Grupo
 O trabalho pode ser feito em grupos de até 3 pessoas. Preencha abaixo o nome dos integrantes do grupo:
 
-1.  Integrante A - matrícula
+1.  Iury Nascimento - 1-1824599
 2.  Integrante B - matrícula
 3.  Integrante C - matrícula
