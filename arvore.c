@@ -9,7 +9,7 @@ struct _arvore {
 };
 
 Arvore* arvore_inserir(Arvore *a, Candidato cand) {
-  //Implemente
+  
    if (a == NULL) {
         Arvore *b = (Arvore *) malloc(sizeof(Arvore));
         b->cand = cand;
@@ -29,7 +29,7 @@ Arvore* arvore_inserir(Arvore *a, Candidato cand) {
 }
 
 Candidato* arvore_buscar(Arvore *a, int candNumero) {
-  //Implemente
+  
   Candidato *cand_tmp = NULL;
 
     if (a == NULL){
@@ -50,7 +50,7 @@ Candidato* arvore_buscar(Arvore *a, int candNumero) {
 }
 
 void arvore_imprime_em_ordem(Arvore *a) {
-  //Implemente
+  
    if (a->esquerda != NULL){
         arvore_imprime_em_ordem(a->esquerda);
     }
