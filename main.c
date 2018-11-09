@@ -55,6 +55,7 @@ Arvore* carregar_candidatos() {
   return a;
 }
 void buscar_por_numero(Arvore *candidatos){
+	
 	printf("\nNumero do candidato: ");
     int numero;
     scanf("%d", &numero);
