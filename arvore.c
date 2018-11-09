@@ -2,20 +2,20 @@
 #include <stdlib.h>
 #include "arvore.h"
 
-struct _arvore {
+typedef struct _arvore {
   struct _arvore *esquerda;
   struct _arvore *direita;
   Candidato cand;
-};
+}Arvore;
 
 Arvore* arvore_inserir(Arvore *a, Candidato cand) {
   
    if (a == NULL) {
-        Arvore *b = (Arvore *) malloc(sizeof(Arvore));
-        b->cand = cand;
-        b->direita = NULL;
-        b->esquerda = NULL;
-        return b;
+        Arvore *novo = (Arvore*) malloc(sizeof(Arvore));
+        novo->cand= cand;
+        novo->direita = NULL;
+        novo->esquerda = NULL;
+        return novo;
     }
 
     if(cand.numero < a->cand.numero){
@@ -29,35 +29,42 @@ Arvore* arvore_inserir(Arvore *a, Candidato cand) {
 }
 
 Candidato* arvore_buscar(Arvore *a, int candNumero) {
-  
-  Candidato *cand_tmp = NULL;
+  	
 
-    if (a == NULL){
-        printf("\nEste candidato não existe!\n\n");
-        return cand_tmp;
-    }
+    if (a == NULL ){
+    	
+    	return NULL;
+        
+    }else if(a->cand.numero == candNumero){
+    	printf("%lf", a->cand.nome);
+		printf("%lf", a->cand.cargo);
+		
+		return &a->cand;
+		
+	}
+    		
 
-    cand_tmp = &a->cand;
+	if(candNumero < a->cand.numero){
+		return arvore_buscar(a->esquerda, candNumero);
+	} 
+	else {
+		return arvore_buscar(a->direita, candNumero);
+	}
 
-    if(candNumero < a->cand.numero){
-        cand_tmp = arvore_buscar(a->esquerda, candNumero);
-    }
-    else if(candNumero > a->cand.numero){
-        cand_tmp = arvore_buscar(a->direita, candNumero);
-    }
-
-    return cand_tmp;
+   
 }
 
 void arvore_imprime_em_ordem(Arvore *a) {
-  
-   if (a->esquerda != NULL){
-        arvore_imprime_em_ordem(a->esquerda);
-    }
-
-    printf("%d - Nome: %s, Cargo: %s\n", a->cand.numero, a->cand.nome, a->cand.cargo);
-
-    if (a->direita != NULL){
-        arvore_imprime_em_ordem(a->direita);
-    }
+	if(a->esquerda != NULL) 
+	{
+		arvore_imprime_em_ordem(a->esquerda);
+	}
+	printf("%lf", a->cand.numero);
+	printf("%lf", a->cand.nome);
+	printf("%lf", a->cand.cargo);
+	
+	if(a->direita != NULL) 
+	{
+		arvore_imprime_em_ordem(a->direita);
+	}
 }
