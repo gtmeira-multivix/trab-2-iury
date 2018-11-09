@@ -60,14 +60,14 @@ void buscar_por_numero(Arvore *candidatos){
     scanf("%d", &numero);
     Candidato *candidato;
     candidato = arvore_buscar(candidatos, numero);
+    
     if (candidato != NULL){
         printf("%d - Nome: %s, Cargo: %s\n", candidato->numero, candidato->nome, candidato->cargo);
     }
 }
 
 void imprimir_todos(Arvore *candidatos) {
-  //Implemente
-  arvore_imprime_em_ordem(candidatos);
+  	arvore_imprime_em_ordem(candidatos);
 }
 
 int main() {
