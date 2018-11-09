@@ -50,7 +50,7 @@ Arvore* carregar_candidatos() {
     a = arvore_inserir(a, c);
   }
   
-  //Retornar árvore construída:
+  //Retornar �rvore construída:
   return a;
 }
 
