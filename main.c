@@ -55,14 +55,15 @@ Arvore* carregar_candidatos() {
 }
 
 void buscar_por_numero(Arvore *candidatos) {
-    printf("\nNumero do candidato: ");
-    int numero;
-    scanf("%d", &numero);
-    Candidato *candidato;
-    candidato = arvore_buscar(candidatos, numero);
-    if (candidato != NULL){
-        printf("%d - Nome: %s, Cargo: %s\n", candidato->numero, candidato->nome, candidato->cargo);
-    }
+    int candNumero;
+	printf("Digite o numero: ");
+	scanf("%d", &candNumero);
+	
+	if((arvore_buscar(candidatos,candNumero))==NULL){
+		printf("Esse candidato nao existe! \n\n");
+	}
+		
+	
 }
 
 void imprimir_todos(Arvore *candidatos) {
