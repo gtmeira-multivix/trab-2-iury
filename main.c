@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include "arvore.h"
-
 Arvore* carregar_candidatos() {
   char linha[1024];
   FILE *arquivo = fopen("candidatos.csv", "r");
@@ -56,7 +55,7 @@ Arvore* carregar_candidatos() {
 }
 
 void buscar_por_numero(Arvore *candidatos) {
-printf("\nNumero do candidato: ");
+ printf("\nNumero do candidato: ");
     int numero;
     scanf("%d", &numero);
     Candidato *candidato;
