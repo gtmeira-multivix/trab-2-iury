@@ -21,7 +21,7 @@ Arvore* arvore_inserir(Arvore *a, Candidato cand) {
     if(cand.numero < a->cand.numero){
         a->esquerda = arvore_inserir(a->esquerda, cand);
     }
-    else if(cand.numero > a->cand.numero){
+    else {
         a->direita = arvore_inserir(a->direita, cand);
     }
 
@@ -36,8 +36,7 @@ Candidato* arvore_buscar(Arvore *a, int candNumero) {
     	return NULL;
         
     }else if(a->cand.numero == candNumero){
-    	printf("%lf", a->cand.nome);
-		printf("%lf", a->cand.cargo);
+    	printf("NUMERO: %d NOME: %s CARGO: %s\n", a->cand.numero, a->cand.nome, a->cand.cargo);
 		
 		return &a->cand;
 		
@@ -59,9 +58,7 @@ void arvore_imprime_em_ordem(Arvore *a) {
 	{
 		arvore_imprime_em_ordem(a->esquerda);
 	}
-	printf("%lf", a->cand.numero);
-	printf("%lf", a->cand.nome);
-	printf("%lf", a->cand.cargo);
+	printf("NUMERO: %d NOME: %s CARGO: %s\n", a->cand.numero, a->cand.nome, a->cand.cargo);	
 	
 	if(a->direita != NULL) 
 	{
